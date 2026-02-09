@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1lyjfvol3lvu"]
+
+[ext_resource type="PackedScene" uid="uid://c7linoa0qdgub" path="res://scenes/fire_pipeline.tscn" id="1_suekb"]
+
+[sub_resource type="GDScript" id="GDScript_hjks7"]
+script/source = "extends Node
+class_name CombatSystem
+
+@onready var fire_pipeline = $FirePipeline
+@export var laser_scene : PackedScene = preload(\"res://scenes/laser.tscn\")
+
+func _ready():
+	add_to_group(\"combat_system\")
+
+func handle_shoot_request(origin: Vector3, direction: Vector3, source):
+	print(\"여기!\")
+	fire_pipeline.fire(origin, direction, source)
+
+
+func spawn_projectile(origin: Vector3, direction: Vector3, source):
+	var laser = laser_scene.instantiate()
+	get_tree().current_scene.add_child(laser)
+	
+	laser.global_position = origin
+	laser.setup(direction, source)
+	
+	
+"
+
+[node name="CombatSystem" type="Node"]
+script = SubResource("GDScript_hjks7")
+
+[node name="FirePipeline" parent="." instance=ExtResource("1_suekb")]

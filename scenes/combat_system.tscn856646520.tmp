@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1lyjfvol3lvu"]
+
+[ext_resource type="Script" uid="uid://pqec2vg8i31p" path="res://scenes/combat_system.gd" id="1_qupeh"]
+[ext_resource type="PackedScene" uid="uid://c7linoa0qdgub" path="res://scenes/fire_pipeline.tscn" id="1_suekb"]
+
+[node name="CombatSystem" type="Node"]
+script = ExtResource("1_qupeh")
+
+[node name="FirePipeline" parent="." instance=ExtResource("1_suekb")]

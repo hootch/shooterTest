@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7linoa0qdgub"]
+
+[ext_resource type="Script" uid="uid://dg7sv4hxvp7sk" path="res://fire_pipeline.gd" id="1_12rkk"]
+
+[node name="FirePipeline" type="Node"]
+script = ExtResource("1_12rkk")
