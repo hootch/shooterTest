@@ -8,7 +8,7 @@ var jump := 500
 
 
 func _ready():
-	faction = Faction.Type.PLAYER
+	faction_id = "player"
 
 func _physics_process(delta: float) -> void:
 	$craft_speederA.rotation.z = move_toward($craft_speederA.rotation.z, -direction.x / 10.0, delta)

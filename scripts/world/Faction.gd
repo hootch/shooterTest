@@ -1,13 +1,21 @@
-extends Node
-class_name Faction
+extends Resource
+class_name FactionData
 
-enum Type {
-	PLAYER,
-	MERCENARY,
-	BANDIT,
-	MONSTER,
-	CORP,
-	CULT,
-	SCIENTISTS,
-	NEUTRAL
-}
+@export var id : String
+@export var name : String
+@export var description: String
+
+
+#extends Node
+#class_name Faction
+#
+#enum Type {
+	#PLAYER,
+	#MERCENARY,
+	#BANDIT,
+	#MONSTER,
+	#CORP,
+	#CULT,
+	#SCIENTISTS,
+	#NEUTRAL
+#}
